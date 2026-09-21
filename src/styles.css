@@ -864,6 +864,10 @@ h1, h2, h3, h4, p { text-wrap: pretty; }
   :root { --content-gutter: 18px; }
   .section-shell { padding: 66px var(--content-gutter); }
   .philosophy-mobile-stage { padding: 48px var(--content-gutter) 22px; }
+  .philosophy-mobile-images { height: clamp(112px, 20svh, 170px); margin: 12px 0 16px; }
+  .philosophy-mobile-card h3 { margin-bottom: 8px; font-size: clamp(34px, 9vw, 42px); }
+  .philosophy-mobile-card strong { margin-bottom: 6px; font-size: 15px; }
+  .philosophy-mobile-card p { font-size: 14px; line-height: 1.42; }
   .story-section { padding-top: 90px; padding-bottom: 76px; }
   .story-collage { height: clamp(320px, 105vw, 500px); }
   .story-image-a { width: 35%; height: 68%; top: 3%; }
