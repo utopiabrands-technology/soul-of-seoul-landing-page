@@ -1,0 +1,7 @@
+node_modules/
+dist/
+offline-preview/
+.env
+.env.*
+*.tar.gz
+*.tar
