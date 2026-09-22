@@ -67,6 +67,7 @@ export default function Collection() {
             <p>COMING SOON</p>
             <h3>The Range Continues</h3>
             <span className="collection-copy">New formulas are taking shape.</span>
+            <span className="collection-cta">Explore Soon <b aria-hidden="true">↗</b></span>
           </div>
         </div>
       </div>
