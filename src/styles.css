@@ -700,7 +700,8 @@ h1, h2, h3, h4, p { text-wrap: pretty; }
 
 .pending-copy { max-width: 520px; }
 .pending-grid { display: grid; gap: 16px; padding-top: 24px; border-top: 1px solid var(--line); }
-.pending-grid > div { display: grid; grid-template-columns: 120px 1fr; gap: 18px; }
+.pending-grid > div { display: grid; grid-template-columns: 120px 1fr; align-items: center; gap: 18px; }
+.pending-grid span { margin-bottom: 0; }
 
 /* 08 Amazon CTA */
 .amazon-section { background: #f5f0f1; }
