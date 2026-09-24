@@ -48,7 +48,10 @@ function resetTilt(event) {
 
 export default function TonerPads() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [previewAnimationKey, setPreviewAnimationKey] = useState(0);
   const active = TONERS[activeIndex];
+  const animateIngredientPreview = () =>
+    setPreviewAnimationKey((current) => current + 1);
 
   return (
     <section
@@ -72,7 +75,7 @@ export default function TonerPads() {
         onChange={setActiveIndex}
         label="Toner pad types"
       >
-        <div className="toner-layout">
+        <div className="product-experience">
           <div className="toner-visual">
             <img
               key={active.visual}
@@ -86,7 +89,7 @@ export default function TonerPads() {
               onPointerLeave={resetTilt}
             >
               <img
-                key={active.previewImage}
+                key={`${active.previewImage}-${previewAnimationKey}`}
                 src={active.previewImage}
                 alt={`${active.previewTitle} visual reference`}
               />
@@ -101,23 +104,27 @@ export default function TonerPads() {
           <div className="product-copy-panel glass-panel">
             <p className="product-category">{active.tab}</p>
             <h3>{active.name}</h3>
-            <p className="product-description pending-copy">
-              Product benefit, key ingredients, skin concern and usage are
-              pending final approved product information.
+            <p className="product-description">
+              A dual-action exfoliating treatment designed to refine texture and
+              support a healthy-looking complexion.
             </p>
 
-            <div className="pending-grid">
-              <div>
-                <span>PRODUCT BENEFIT</span>
-                <p>
-                  A dual-action exfoliating treatment designed to refine texture
-                  and support a healthy-looking complexion.
-                </p>
+            <div className="product-meta-block">
+              <span>KEY INGREDIENTS</span>
+              <div className="ingredient-buttons">
+                <button
+                  type="button"
+                  className="is-active"
+                  onMouseEnter={animateIngredientPreview}
+                  onFocus={animateIngredientPreview}
+                  onClick={animateIngredientPreview}
+                >
+                  Vitamin C Complex
+                </button>
               </div>
-              <div>
-                <span>KEY INGREDIENTS</span>
-                <p>Vitamin C Complex with targeted exfoliating actives.</p>
-              </div>
+            </div>
+
+            <div className="product-facts">
               <div>
                 <span>BEST FOR</span>
                 <p>Uneven texture, dull skin, and visible signs of fatigue.</p>
